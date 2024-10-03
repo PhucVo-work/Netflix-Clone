@@ -33,6 +33,7 @@
 
 .navbar-left ul li{
     cursor: pointer;
+    text-decoration: none;
 }
 
 .navbar-right{
@@ -90,7 +91,7 @@
     transform: rotate(90deg);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1130px) {
     .navbar{
         padding: 20px 4%;
     }

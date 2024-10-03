@@ -1,6 +1,5 @@
 .hero{
     position: relative;
-
 }
 
 .banner-img{
@@ -13,12 +12,12 @@
     position: absolute;
     width: 100%;
     padding-left: 6%;
-    bottom: 0;
+    padding-right: 6%;
+    bottom: 8%;
 }
 
-.caption-img{
-    width: 90%;
-    max-width: 420px;
+.hero-name{
+    font-size: 38px;
     margin-bottom: 30px;
 }
 
@@ -67,6 +66,7 @@
 
 .more-cards{
     padding-left: 6%;
+    padding-right: 6%;
 }
 
 @media (max-width: 1024px) {
@@ -84,9 +84,9 @@
         padding-left: 4%;
     }
 
-    .caption-img{
-        margin-bottom: 10px;
-        width: 40%;
+    .hero-name{
+        font-size: 24px;
+        margin-bottom: 16px;
     }
 
     .hero-caption p{
@@ -104,8 +104,9 @@
 }
 
 @media (max-width: 500px) {
-    .caption-img{
-        display: none;
+    .hero-name{
+        font-size: 16px;
+        margin-bottom: 8px;
     }
 
     .btn img{

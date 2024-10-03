@@ -6,28 +6,38 @@ import bell_icon from "../../assets/bell_icon.svg";
 import profile_img from "../../assets/profile_img.png";
 import caret_icon from "../../assets/caret_icon.svg";
 import { logout } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 
 const Navbar = () => {
 
   const navRef = useRef()
+  const navigate = useNavigate()
 
-  useEffect(()=>{
-    window.addEventListener('scroll', ()=>{
-      if(window.scrollY >= 80){
-        navRef.current.classList.add('nav-dark')
-      }else{
-        navRef.current.classList.remove('nav-dark')
+  useEffect(() => {
+    const handleScroll = () => {
+      if (navRef.current) {  // Đảm bảo navRef.current không phải là null
+        if (window.scrollY >= 80) {
+          navRef.current.classList.add('nav-dark');
+        } else {
+          navRef.current.classList.remove('nav-dark');
+        }
       }
-    })
-  },[])
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="navbar" ref={navRef}>
       <div className="navbar-left">
-        <img src={logo} alt="" />
+        <img onClick={()=>{navigate('/')}} src={logo} alt="" />
         <ul>
-          <li>Home</li>
+          <li onClick={()=>{navigate('/')}}>Home</li>
           <li>Tv Shows</li>
           <li>Movies</li>
           <li>New & popular</li>

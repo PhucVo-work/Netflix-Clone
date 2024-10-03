@@ -7,6 +7,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './firebase.js'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import DetailMovie from './pages/DetailMovie/DetailMovie.jsx'
 
 const App = () => {
 
@@ -15,10 +16,10 @@ const App = () => {
   useEffect(()=>{
     onAuthStateChanged(auth, async (user)=>{
       if(user){
-        console.log("Logged In");
+        // console.log("Logged In");
         navigate('/')
       }else{
-        console.log("Logged Out");
+        // console.log("Logged Out");
         navigate('/login')
       }
     })
@@ -31,6 +32,7 @@ const App = () => {
           <Route path='/' element={<Home/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/player/:id' element={<Player/>}></Route>
+          <Route path='/MovieDetail/:id' element={<DetailMovie/>}></Route>
         </Routes>
     </div>
   )

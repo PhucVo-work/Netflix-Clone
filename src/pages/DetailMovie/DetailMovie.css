@@ -1,0 +1,138 @@
+.detail-movie {
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.detail-img {
+  width: 100%;
+  mask-image: linear-gradient(to top, transparent, black 100%);
+  -webkit-mask-image: linear-gradient(to top, transparent, black 100%);
+}
+
+.info {
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  padding-left: 6%;
+  padding-right: 6%;
+  overflow: hidden;
+}
+
+.hero-poster {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  background-color: darkgrey;
+  /* width: 45%;
+    max-height: 70%; */
+  margin-right: 4%;
+}
+
+.info-movie {
+  margin-top: 2%;
+  width: 55%;
+}
+
+.info-movie .name {
+  font-size: 64px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.genres {
+  list-style-type: none;
+  margin-bottom: 3%;
+}
+
+.genre {
+  margin-right: 15px;
+  padding: 4px 20px;
+  border: 3px solid #fff;
+  border-radius: 30px;
+}
+
+.detail-btn .btn{
+  display: flex;
+  gap: 10px;
+  border: 0;
+  outline: 0;
+  padding: 8px 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.detail-btn .btn img{
+  width: 25px;
+}
+
+.over-view {
+  font-size: 16px;
+  max-width: 100%;
+  margin-bottom: 2%;
+}
+
+.title-cast {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.caster-list {
+  padding-right: 6%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.caster-item {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.caster-img {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 160px;
+  height: 194px;
+}
+
+.w{
+  position: absolute;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  padding: 10px;
+}
+
+.caster-name {
+  height: max-content;
+  text-align: left;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  overflow: hidden;
+  white-space: nowrap; /* Không xuống hàng */
+}
+
+.swiper {
+  cursor: grab;
+}
+
+.swiper:active {
+  cursor: grabbing;
+}

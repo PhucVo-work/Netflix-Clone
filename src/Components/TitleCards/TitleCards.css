@@ -1,71 +1,158 @@
-.title-cards{
-    margin-top: 50px;
-    margin-bottom: 30px;
+.title-cards {
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
-.titlecards h2{
-    margin-bottom: 8px;
+.titlecards h2 {
+  margin-bottom: 8px;
 }
 
-.card-list{
-    display: flex;
-    gap: 10px;
-    overflow-x: scroll;
+.card-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+  border-radius: 4px;
 }
 
-.card-list::-webkit-scrollbar{
-    display: none;
-}  
+.card-list::-webkit-scrollbar {
+  display: none;
+}
 
-.card-list img{
-    width: 240px;
-    height: 135px;  
-    object-fit: cover;
+.card-list img {
+  width: 240px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.card-list .card {
+  position: relative;
+}
+
+.card-list .card p {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.more-action {
+  position: absolute;
+  transition: opacity 0.3s ease, bottom 0.4s ease; /* Thêm hiệu ứng chuyển tiếp */
+  bottom: 6px;
+  left: 0px;
+  background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  opacity: 0;
+}
+
+/* Khi hover vào thẻ card, hiện lên */
+.card:hover .more-action {
+  opacity: 1; /* Hiện thị phần tử */
+}
+
+/* Animation keyframes nếu bạn muốn thêm */
+@keyframes slide-up {
+  0% {
+    transform: translateY(10px); /* Bắt đầu từ dưới */
+    opacity: 0; /* Ẩn đi */
+  }
+  100% {
+    transform: translateY(0); /* Kết thúc ở vị trí ban đầu */
+    opacity: 1; /* Hiện thị */
+  }
+}
+
+.card:hover .more-action {
+  animation: slide-up 0.4s ease-in-out; /* Chạy animation khi hover */
+}
+
+.btn-trailer {
+  background-color: #ff0000; /* Màu nền đỏ giống YouTube */
+  color: white; /* Màu chữ trắng */
+  border: none; /* Không có viền */
+  border-radius: 50%; /* Bo góc nhẹ */
+  padding: 18px 14px; /* Khoảng cách bên trong */
+  font-size: 16px; /* Kích thước chữ */
+  cursor: pointer; /* Thay đổi con trỏ khi hover */
+  display: flex; /* Sử dụng flexbox để căn giữa */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền khi hover */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Hiệu ứng hover */
+.btn-trailer:hover {
+  background-color: #cc0000; /* Đổi màu nền khi hover */
+}
+
+/* Thêm biểu tượng Play */
+.btn-trailer::before {
+  content: ""; /* Tạo nội dung rỗng */
+  display: inline-block; /* Để biểu tượng và chữ nằm cùng hàng */
+  width: 0; /* Chiều rộng ban đầu */
+  height: 0; /* Chiều cao ban đầu */
+  border-left: 18px solid white; /* Đường viền bên trái tạo thành tam giác */
+  border-top: 9px solid transparent; /* Đường viền trên trong suốt */
+  border-bottom: 9px solid transparent; /* Đường viền dưới trong suốt */
+  margin-top: -4px;
+  margin-left: 4px; /* Khoảng cách giữa biểu tượng và chữ */
+}
+
+.btn-detail{
+    border: 0;
+    outline: 0;
+    padding: 4px 6px;
+    align-items: center;
     border-radius: 4px;
     cursor: pointer;
-}
-
-.card-list .card{
-    position: relative;
-}
-
-.card-list .card p{
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    text-decoration: none;
     color: #fff;
+    background: #6d6d6eb3;
+    margin-top: 6px;
+    max-width: 50px;
+}
+
+.btn-detail img{
+    width: 28px;
+    display: block;
 }
 
 @media (max-width: 800px) {
-    .title-cards{
-        margin-top: 20px;
-        margin-bottom: 0;
-    }
+  .title-cards {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
 
-    .title-cards h2{
-        font-size: 20px;
-    }
+  .title-cards h2 {
+    font-size: 20px;
+  }
 
-    .card-list img{
-        width: 200px;
-    }
+  .card-list img {
+    width: 200px;
+  }
 
-    .card-list p{
-        font-size: 12px;
-    }
+  .card-list p {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 500px) {
-    .title-cards h2{
-        font-size: 15px;
-    }
+  .title-cards h2 {
+    font-size: 15px;
+  }
 
-    .card-list img{
-        width: 165px;
-    }
+  .card-list img {
+    width: 165px;
+  }
 
-    .card-list p{
-        font-size: 10px;
-    }
+  .card-list p {
+    font-size: 10px;
+  }
 }
