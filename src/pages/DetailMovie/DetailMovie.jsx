@@ -7,6 +7,7 @@ import "swiper/css"; // Import CSS chính
 import { Mousewheel } from "swiper/modules";
 import { Link } from "react-router-dom";
 import play_icon from "../../assets/play_icon.png";
+import Player from "../Player/Player";
 
 const DetailMovie = () => {
   const { id } = useParams();
@@ -73,8 +74,6 @@ const DetailMovie = () => {
                 spaceBetween={16}
                 slidesPerView={4}
                 loop={false}
-                pagination={{ clickable: true }}
-                navigation
                 grabCursor={true} // Thêm tính năng kéo chuột
                 mousewheel={true} // Kích hoạt cuộn chuột
                 modules={[Mousewheel]} // Thêm Mousewheel vào modules
@@ -97,6 +96,9 @@ const DetailMovie = () => {
             </ul>
           </div>
         </div>
+      </div>
+      <div>
+        <Player listPlayer={true}/>
       </div>
     </div>
   );
