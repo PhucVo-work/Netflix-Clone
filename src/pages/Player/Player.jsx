@@ -45,7 +45,7 @@ const Player = ({ listPlayer = false }) => {
             setApiData({
               name: trailer.name,
               key: trailer.key,
-              published_at: trailer.published_at,
+              published_at: trailer.published_at.slice(0,10),
               type: trailer.type,
             });
           } else {
@@ -60,11 +60,12 @@ const Player = ({ listPlayer = false }) => {
         }
       })
       .catch((err) => console.error(err));
+      
   }, [id]);
 
   return listPlayer ? (
     <NavigationSwiper> 
-      {apiData.map((movie, index) => (
+      {apiData.map((movie) => (
         <SwiperSlide key={movie.key}>
           <div className="player">
             <iframe
@@ -95,7 +96,7 @@ const Player = ({ listPlayer = false }) => {
         allowFullScreen
       ></iframe>
       <div className="player-info">
-        <p>{apiData.published_at.slice(0, 10)}</p>
+        <p>{apiData.published_at}</p>
         <p>{apiData.name}</p>
         <p>{apiData.type}</p>
       </div>
