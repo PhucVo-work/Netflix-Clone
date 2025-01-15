@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import "./TitleCards.css";
 import cards_data from "../../assets/cards/Cards_data";
 import { Link } from "react-router-dom";
-import { StoreContext } from "../../context/storeContext";
+import { StoreContext } from "../../context/StoreContext";
 import info_icon from "../../assets/info_icon.png";
 
 const TitleCards = ({ title, category, isHero }) => {
