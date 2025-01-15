@@ -7,7 +7,7 @@ import play_icon from "../../assets/play_icon.png";
 import info_icon from "../../assets/info_icon.png";
 import TitleCards from "../../Components/TitleCards/TitleCards.jsx";
 import Footer from "../../Components/Footer/Footer.jsx";
-import { StoreContext } from "../../context/storeContext.jsx";
+import { StoreContext } from "../../context/StoreContext.jsx";
 import { Link } from "react-router-dom";
 
 const Home = () => {
